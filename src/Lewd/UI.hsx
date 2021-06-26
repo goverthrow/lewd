@@ -1,0 +1,84 @@
+module Lewd.UI (
+  module Lewd.UI,
+  module X,
+) where
+
+import Graphics.Gloss as X
+import Graphics.Gloss.Data.Extent as X
+import Graphics.Gloss.Interface.Environment as X
+
+import Graphics.Gloss.Interface.IO.Game
+
+runUI :: UI -> i -> o -> (World -> i -> Picture) -> (o -> World -> i -> IO i) -> IO ()
+runUI UI{..} inner outer draw update = do
+  screen@(screenW, screenH) <- getScreenSize
+  let dims@(dimW, dimH) = over both (round . (* initSize) . fromIntegral) screen
+  let handle :: Event -> World -> World
+      handle event world@World{inputs} =
+        case event of
+          EventMotion (over both round -> pos) ->
+            world{pos}
+          EventKey key keyState modifiers (over both round -> pos) ->
+            world{inputs = inputs |> Input{pointer = pos, ..}, pos}
+          EventResize dims ->
+            world{dims}
+          _ -> world
+
+  playIO
+    ( InWindow
+        (unpack title)
+        dims
+        (hadif screenW dimW, hadif screenH dimH)
+    )
+    bgColor
+    fps
+    (def, inner)
+    (return . uncurry draw)
+    (\ev -> return . first (handle ev))
+    (const $ uncurry $ \w i -> (w,) <$> update outer w i)
+
+type Dim = Int
+type Dims = (Dim, Dim)
+
+data UI = UI
+  { title :: Text
+  , initSize :: Double
+  , fps :: Int
+  , bgColor :: Color
+  }
+
+instance Default UI where
+  def =
+    UI
+      { title = "UI"
+      , initSize = 3 / 4
+      , bgColor = white
+      , fps = 60
+      }
+hadif a b = round $ fromIntegral a / 2 - fromIntegral b / 2
+
+rect w h = rectangleSolid (fromIntegral w) (fromIntegral h)
+trans x y = translate (fromIntegral x) (fromIntegral y)
+
+data Input = Input
+  { key :: Key
+  , keyState :: KeyState
+  , modifiers :: Modifiers
+  , pointer :: Coord
+  }
+  deriving (Show)
+
+data World = World
+  { dims :: Dims
+  , pos :: Coord
+  , inputs :: Seq Input
+  }
+  deriving (Show)
+
+instance Default World where
+  def =
+    World
+      { dims = (0, 0)
+      , pos = (0, 0)
+      , inputs = []
+      }

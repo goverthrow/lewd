@@ -1,0 +1,387 @@
+cabal-version: 1.22
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           lewd
+version:        1.0.0
+synopsis:       Monolithic drop-in replacement for base to kick-start common productive workflows
+description:    To use this library just replace "base" with "lewd" in your dependency list.
+category:       Prelude
+homepage:       https://github.com/goverthrow/lewd#readme
+bug-reports:    https://github.com/goverthrow/lewd/issues
+maintainer:     goverthrow <goverthrow@protonmail.com>
+license:        PublicDomain
+license-file:   LICENSE
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/goverthrow/lewd
+
+library
+  exposed-modules:
+      Lewd
+      Lewd.DB
+      Lewd.WebSockets.Client
+      Lewd.WebSockets.Server
+      Prelude
+      T
+  other-modules:
+      Paths_lewd
+  reexported-modules:
+      Control.Applicative
+    , Control.Arrow
+    , Control.Category
+    , Control.Concurrent
+    , Control.Concurrent.Chan
+    , Control.Concurrent.MVar
+    , Control.Concurrent.QSem
+    , Control.Concurrent.QSemN
+    , Control.Exception
+    , Control.Exception.Base
+    , Control.Monad
+    , Control.Monad.Fail
+    , Control.Monad.Fix
+    , Control.Monad.Instances
+    , Control.Monad.IO.Class
+    , Control.Monad.ST
+    , Control.Monad.ST.Lazy
+    , Control.Monad.ST.Lazy.Safe
+    , Control.Monad.ST.Lazy.Unsafe
+    , Control.Monad.ST.Safe
+    , Control.Monad.ST.Strict
+    , Control.Monad.ST.Unsafe
+    , Control.Monad.Zip
+    , Data.Bifoldable
+    , Data.Bifunctor
+    , Data.Bitraversable
+    , Data.Bits
+    , Data.Bool
+    , Data.Char
+    , Data.Coerce
+    , Data.Complex
+    , Data.Data
+    , Data.Dynamic
+    , Data.Either
+    , Data.Eq
+    , Data.Fixed
+    , Data.Foldable
+    , Data.Function
+    , Data.Functor
+    , Data.Functor.Classes
+    , Data.Functor.Contravariant
+    , Data.Functor.Compose
+    , Data.Functor.Const
+    , Data.Functor.Identity
+    , Data.Functor.Product
+    , Data.Functor.Sum
+    , Data.IORef
+    , Data.Int
+    , Data.Ix
+    , Data.Kind
+    , Data.List
+    , Data.List.NonEmpty
+    , Data.Maybe
+    , Data.Monoid
+    , Data.Ord
+    , Data.Proxy
+    , Data.Ratio
+    , Data.Semigroup
+    , Data.STRef
+    , Data.STRef.Lazy
+    , Data.STRef.Strict
+    , Data.String
+    , Data.Traversable
+    , Data.Tuple
+    , Data.Type.Bool
+    , Data.Type.Coercion
+    , Data.Type.Equality
+    , Data.Typeable
+    , Data.Unique
+    , Data.Version
+    , Data.Void
+    , Data.Word
+    , Debug.Trace
+    , Foreign
+    , Foreign.C
+    , Foreign.C.Error
+    , Foreign.C.String
+    , Foreign.C.Types
+    , Foreign.Concurrent
+    , Foreign.ForeignPtr
+    , Foreign.ForeignPtr.Safe
+    , Foreign.ForeignPtr.Unsafe
+    , Foreign.Marshal
+    , Foreign.Marshal.Alloc
+    , Foreign.Marshal.Array
+    , Foreign.Marshal.Error
+    , Foreign.Marshal.Pool
+    , Foreign.Marshal.Safe
+    , Foreign.Marshal.Unsafe
+    , Foreign.Marshal.Utils
+    , Foreign.Ptr
+    , Foreign.Safe
+    , Foreign.StablePtr
+    , Foreign.Storable
+    , GHC.Arr
+    , GHC.Base
+    , GHC.ByteOrder
+    , GHC.Char
+    , GHC.Clock
+    , GHC.Conc
+    , GHC.Conc.IO
+    , GHC.Conc.Signal
+    , GHC.Conc.Sync
+    , GHC.ConsoleHandler
+    , GHC.Constants
+    , GHC.Desugar
+    , GHC.Enum
+    , GHC.Environment
+    , GHC.Err
+    , GHC.Exception
+    , GHC.Exception.Type
+    , GHC.ExecutionStack
+    , GHC.ExecutionStack.Internal
+    , GHC.Exts
+    , GHC.Fingerprint
+    , GHC.Fingerprint.Type
+    , GHC.Float
+    , GHC.Float.ConversionUtils
+    , GHC.Float.RealFracMethods
+    , GHC.Foreign
+    , GHC.ForeignPtr
+    , GHC.GHCi
+    , GHC.GHCi.Helpers
+    , GHC.Generics
+    , GHC.IO
+    , GHC.IO.Buffer
+    , GHC.IO.BufferedIO
+    , GHC.IO.Device
+    , GHC.IO.Encoding
+    , GHC.IO.Encoding.CodePage
+    , GHC.IO.Encoding.Failure
+    , GHC.IO.Encoding.Iconv
+    , GHC.IO.Encoding.Latin1
+    , GHC.IO.Encoding.Types
+    , GHC.IO.Encoding.UTF16
+    , GHC.IO.Encoding.UTF32
+    , GHC.IO.Encoding.UTF8
+    , GHC.IO.Exception
+    , GHC.IO.FD
+    , GHC.IO.Handle
+    , GHC.IO.Handle.FD
+    , GHC.IO.Handle.Internals
+    , GHC.IO.Handle.Lock
+    , GHC.IO.Handle.Text
+    , GHC.IO.Handle.Types
+    , GHC.IO.IOMode
+    , GHC.IO.Unsafe
+    , GHC.IOArray
+    , GHC.IORef
+    , GHC.Int
+    , GHC.Ix
+    , GHC.List
+    , GHC.Maybe
+    , GHC.MVar
+    , GHC.Natural
+    , GHC.Num
+    , GHC.OldList
+    , GHC.OverloadedLabels
+    , GHC.Pack
+    , GHC.Profiling
+    , GHC.Ptr
+    , GHC.Read
+    , GHC.Real
+    , GHC.Records
+    , GHC.ResponseFile
+    , GHC.RTS.Flags
+    , GHC.ST
+    , GHC.StaticPtr
+    , GHC.STRef
+    , GHC.Show
+    , GHC.Stable
+    , GHC.StableName
+    , GHC.Stack
+    , GHC.Stack.CCS
+    , GHC.Stack.Types
+    , GHC.Stats
+    , GHC.Storable
+    , GHC.TopHandler
+    , GHC.TypeLits
+    , GHC.TypeNats
+    , GHC.Unicode
+    , GHC.Weak
+    , GHC.Word
+    , Numeric
+    , Numeric.Natural
+    , System.CPUTime
+    , System.Console.GetOpt
+    , System.Environment
+    , System.Environment.Blank
+    , System.Exit
+    , System.IO
+    , System.IO.Error
+    , System.IO.Unsafe
+    , System.Info
+    , System.Mem
+    , System.Mem.StableName
+    , System.Mem.Weak
+    , System.Posix.Internals
+    , System.Posix.Types
+    , System.Timeout
+    , Text.ParserCombinators.ReadP
+    , Text.ParserCombinators.ReadPrec
+    , Text.Printf
+    , Text.Read
+    , Text.Read.Lex
+    , Text.Show
+    , Text.Show.Functions
+    , Type.Reflection
+    , Type.Reflection.Unsafe
+    , Unsafe.Coerce
+  hs-source-dirs:
+      src
+  default-extensions:
+      AllowAmbiguousTypes
+      Arrows
+      BangPatterns
+      BinaryLiterals
+      CApiFFI
+      CPP
+      CUSKs
+      ConstrainedClassMethods
+      ConstraintKinds
+      DataKinds
+      DefaultSignatures
+      DeriveAnyClass
+      DeriveDataTypeable
+      DeriveFoldable
+      DeriveFunctor
+      DeriveGeneric
+      DeriveLift
+      DeriveTraversable
+      DerivingStrategies
+      DerivingVia
+      DisambiguateRecordFields
+      DoAndIfThenElse
+      BlockArguments
+      DuplicateRecordFields
+      EmptyCase
+      EmptyDataDecls
+      EmptyDataDeriving
+      ExistentialQuantification
+      ExplicitForAll
+      ExplicitNamespaces
+      ExtendedDefaultRules
+      FlexibleContexts
+      FlexibleInstances
+      ForeignFunctionInterface
+      FunctionalDependencies
+      GADTSyntax
+      GADTs
+      GHCForeignImportPrim
+      GeneralizedNewtypeDeriving
+      ImplicitParams
+      ImplicitPrelude
+      ImportQualifiedPost
+      ImpredicativeTypes
+      IncoherentInstances
+      TypeFamilyDependencies
+      InstanceSigs
+      ApplicativeDo
+      InterruptibleFFI
+      KindSignatures
+      LambdaCase
+      LiberalTypeSynonyms
+      MagicHash
+      MonadComprehensions
+      MonoLocalBinds
+      MonomorphismRestriction
+      MultiParamTypeClasses
+      MultiWayIf
+      NumericUnderscores
+      NPlusKPatterns
+      NamedFieldPuns
+      NamedWildCards
+      NegativeLiterals
+      HexFloatLiterals
+      NumDecimals
+      OverloadedLabels
+      OverloadedLists
+      OverloadedStrings
+      PackageImports
+      ParallelArrays
+      ParallelListComp
+      PartialTypeSignatures
+      PatternGuards
+      PatternSynonyms
+      PolyKinds
+      PolymorphicComponents
+      QuantifiedConstraints
+      PostfixOperators
+      QuasiQuotes
+      Rank2Types
+      RankNTypes
+      RecordWildCards
+      RecursiveDo
+      RelaxedPolyRec
+      RoleAnnotations
+      ScopedTypeVariables
+      StandaloneDeriving
+      StarIsType
+      StaticPointers
+      NoStrict
+      NoStrictData
+      TemplateHaskell
+      TemplateHaskellQuotes
+      StandaloneKindSignatures
+      TraditionalRecordSyntax
+      TransformListComp
+      TupleSections
+      TypeApplications
+      TypeInType
+      TypeFamilies
+      TypeOperators
+      TypeSynonymInstances
+      UnboxedTuples
+      UnboxedSums
+      UndecidableInstances
+      UndecidableSuperClasses
+      UnicodeSyntax
+      UnliftedFFITypes
+      UnliftedNewtypes
+      ViewPatterns
+  ghc-options: -threaded -O2 -rtsopts -with-rtsopts=-N -Wall -Wmissing-deriving-strategies -Wderiving-defaults
+  build-depends:
+      aeson
+    , async
+    , base >=4.7 && <=5
+    , bson
+    , containers
+    , data-default
+    , directory
+    , double-conversion
+    , file-embed
+    , filepath
+    , http-types
+    , lens
+    , mongoDB
+    , mtl
+    , process
+    , random
+    , random-shuffle
+    , stm
+    , text
+    , text-show
+    , unordered-containers
+    , uri-encode
+    , wai
+    , wai-extra
+    , wai-websockets
+    , warp
+    , warp-tls
+    , websockets
+    , wuss
+  default-language: Haskell2010

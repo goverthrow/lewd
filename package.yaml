@@ -1,0 +1,52 @@
+name: lewd
+version: 1.0.0
+synopsis: Monolithic drop-in replacement for base to kick-start common productive workflows
+description: To use this library just replace "base" with "lewd" in your dependency list.
+maintainer: goverthrow <goverthrow@protonmail.com>
+github: goverthrow/lewd
+category: Prelude
+license: PublicDomain
+
+dependencies:
+  - base >= 4.7 && <= 5
+  - async
+  - file-embed
+  - directory
+  - filepath
+  - process
+  - text
+  - text-show
+  - containers
+  - unordered-containers
+  - mtl
+  - lens
+  - stm
+  - random
+  - double-conversion
+  - data-default
+  - aeson
+  - uri-encode
+  - random-shuffle
+
+  - websockets
+  - warp
+  - wai
+  - wai-extra
+  - wai-websockets
+  - http-types
+  - warp-tls
+  - wuss
+
+  - mongoDB
+  - bson
+
+  # - gloss
+  # - gloss-algorithms
+
+
+ghc-options: !include ../common/opts.yaml
+default-extensions: !include ../common/exts.yaml
+
+library:
+  source-dirs: src
+  reexported-modules: !include base.yaml

@@ -1,7 +1,7 @@
 name: lewd
 version: 1.0.0
-synopsis: Monolithic drop-in replacement for base to kick-start common productive workflows
-description: To use this library just replace "base" with "lewd" in your dependency list.
+synopsis: Quick-and-dirty base replacement
+description: Monolithic drop-in replacement for base to kick-start common productive workflows
 maintainer: goverthrow <goverthrow@protonmail.com>
 github: goverthrow/lewd
 category: Prelude
@@ -44,7 +44,7 @@ dependencies:
   # - gloss-algorithms
 
 
-ghc-options: !include ../common/opts.yaml
+# ghc-options: !include ../common/opts.yaml
 default-extensions: !include ../common/exts.yaml
 
 library:

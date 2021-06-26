@@ -353,7 +353,6 @@ library
       UnliftedFFITypes
       UnliftedNewtypes
       ViewPatterns
-  ghc-options: -threaded -O2 -rtsopts -with-rtsopts=-N -Wall -Wmissing-deriving-strategies -Wderiving-defaults
   build-depends:
       aeson
     , async

@@ -22,6 +22,8 @@ import Data.Traversable as X
 import Data.Maybe as X
 import Control.Exception as X
 
+import Foreign.C as X
+
 import Data.Double.Conversion.Text as X
 import Data.FileEmbed as X
 
@@ -32,7 +34,7 @@ import Data.Text.IO as X (putStr, putStrLn, readFile, writeFile)
 
 import Control.Concurrent.Async as X
 
-import System.Directory as X
+import System.Directory as Xq
 import System.Exit as X
 import System.FilePath as X
 import System.IO as X (hFlush, stdout)

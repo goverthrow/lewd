@@ -6,8 +6,8 @@ cabal-version: 1.22
 
 name:           lewd
 version:        1.0.0
-synopsis:       Monolithic drop-in replacement for base to kick-start common productive workflows
-description:    To use this library just replace "base" with "lewd" in your dependency list.
+synopsis:       Quick-and-dirty base replacement
+description:    Monolithic drop-in replacement for base to kick-start common productive workflows
 category:       Prelude
 homepage:       https://github.com/goverthrow/lewd#readme
 bug-reports:    https://github.com/goverthrow/lewd/issues

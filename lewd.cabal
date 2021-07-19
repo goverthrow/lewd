@@ -360,6 +360,7 @@ library
     , async
     , base >=4.7 && <=5
     , bson
+    , bytestring
     , conduit
     , conduit-extra
     , containers

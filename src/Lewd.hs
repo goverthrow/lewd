@@ -22,6 +22,7 @@ import Data.Traversable as X
 import Data.Maybe as X
 import Control.Exception as X
 
+import Foreign as X hiding (void)
 import Foreign.C as X
 
 import Data.Double.Conversion.Text as X
@@ -34,7 +35,7 @@ import Data.Text.IO as X (putStr, putStrLn, readFile, writeFile)
 
 import Control.Concurrent.Async as X
 
-import System.Directory as Xq
+import System.Directory as X
 import System.Exit as X
 import System.FilePath as X
 import System.IO as X (hFlush, stdout)
@@ -65,6 +66,10 @@ import Data.Text.Read (decimal, double)
 
 import Network.URI.Encode (encodeText, decodeText)
 
+import Data.ByteString      qualified as BS
+import Data.ByteString.Lazy qualified as LBS
+import Data.ByteString.Char8 qualified as B8
+
 type String = Text
 
 toInt :: Text -> Maybe Int
@@ -89,3 +94,12 @@ uriEncode = encodeText
 
 uriDecode :: Text -> Text
 uriDecode = decodeText
+
+bsToLbs :: BS.ByteString -> LBS.ByteString
+bsToLbs = LBS.fromStrict
+
+lbsToBs :: LBS.ByteString -> BS.ByteString
+lbsToBs = LBS.toStrict
+
+bsToCl :: BS.ByteString -> [Char]
+bsToCl = B8.unpack

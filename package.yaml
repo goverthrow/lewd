@@ -9,6 +9,8 @@ license: PublicDomain
 
 dependencies:
   - base >= 4.7 && <= 5
+
+  - bytestring
   - async
   - file-embed
   - directory

@@ -27,6 +27,8 @@ dependencies:
   - aeson
   - uri-encode
   - random-shuffle
+  - conduit
+  - conduit-extra
 
   - websockets
   - warp
@@ -36,6 +38,7 @@ dependencies:
   - http-types
   - warp-tls
   - wuss
+  - http-conduit
 
   - mongoDB
   - bson

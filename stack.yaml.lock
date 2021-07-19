@@ -99,7 +99,7 @@ packages:
     url: https://github.com/codedownio/haskell-network-attoparsec/archive/bfd305117b09b715c73a8d9763cf995fa733563e.tar.gz
 snapshots:
 - completed:
-    size: 576534
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/nightly/2021/4/2.yaml
-    sha256: 76ba2ea759dfc59a1b2a9ea92ea2c8d418812bc57612522ce17955e19d817faa
-  original: nightly-2021-04-02
+    size: 556830
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/nightly/2021/7/17.yaml
+    sha256: 387c17971aa47d4ca9e9af0223fa0010d5cc9ef360cca72cd17419a90d83cec8
+  original: nightly-2021-07-17

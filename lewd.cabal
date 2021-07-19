@@ -24,6 +24,8 @@ library
   exposed-modules:
       Lewd
       Lewd.DB
+      Lewd.HTTP.Client
+      Lewd.HTTP.Server
       Lewd.WebSockets.Client
       Lewd.WebSockets.Server
       Prelude
@@ -358,12 +360,15 @@ library
     , async
     , base >=4.7 && <=5
     , bson
+    , conduit
+    , conduit-extra
     , containers
     , data-default
     , directory
     , double-conversion
     , file-embed
     , filepath
+    , http-conduit
     , http-types
     , lens
     , mongoDB
